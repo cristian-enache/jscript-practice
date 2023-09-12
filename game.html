@@ -33,7 +33,12 @@
 
     <button onclick =" playGame('Foarfeca');" id="scissors"></button>
 
+    <button onclick="score.Castigate = 0; score.Pierdute = 0; score.Egal= 0;">Reset score</button>
+
     <script>
+        const score = JSON.parse(localStorage.getItem('score'));
+
+        console.log(localStorage.getItem('score'));
 
         function playGame(playerMove){
 
@@ -56,7 +61,19 @@
                         else if (compMove === 'Foarfeca') {rezultat = 'Ai castigat!';}
                     }
 
-                    alert(`Ai ales ${playerMove}. Computer a ales ${compMove}. ${rezultat}`);
+                    if(rezultat === 'Ai castigat!'){
+                        score.Castigate += 1;
+                    }else if(rezultat === 'Ai pierdut!'){
+                        score.Pierdute += 1;
+                    }else if(rezultat === 'Egal'){
+                        score.Egal += 1;
+                    }
+
+                    /*save data - local. localStorage only supports strings*/
+                    localStorage.setItem('score', JSON.stringify(score));
+
+                    alert(`Ai ales ${playerMove}. Computer a ales ${compMove}. ${rezultat} ,
+                     Castigate: ${score.Castigate}, Pierdute: ${score.Pierdute}, Egal: ${score.Egal}` );
                      
         }
 
