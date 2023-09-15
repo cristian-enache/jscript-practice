@@ -33,12 +33,21 @@
 
     <button onclick =" playGame('Foarfeca');" id="scissors"></button>
 
-    <button onclick="score.Castigate = 0; score.Pierdute = 0; score.Egal= 0;">Reset score</button>
+    <p class="js-result"></p>
+
+    <p class="js-moves"></p>
+
+    <p class="js-score"></p>
+
+    <button onclick="score.Castigate = 0; score.Pierdute = 0; score.Egal= 0; updateScore();">Reset score</button>
+
 
     <script>
         const score = JSON.parse(localStorage.getItem('score'));
 
         console.log(localStorage.getItem('score'));
+
+        updateScore();
 
         function playGame(playerMove){
 
@@ -72,12 +81,16 @@
                     /*save data - local. localStorage only supports strings*/
                     localStorage.setItem('score', JSON.stringify(score));
 
-                    alert(`Ai ales ${playerMove}. Computer a ales ${compMove}. ${rezultat} ,
-                     Castigate: ${score.Castigate}, Pierdute: ${score.Pierdute}, Egal: ${score.Egal}` );
+                    /*alert(`Ai ales ${playerMove}. Computer a ales ${compMove}. ${rezultat} ,
+                     Castigate: ${score.Castigate}, Pierdute: ${score.Pierdute}, Egal: ${score.Egal}` );*/
+
+                    updateScore();
+
+                    document.querySelector('.js-result').innerHTML = rezultat;
+
+                    document.querySelector('.js-moves').innerHTML = `You ${playerMove} - ${compMove} Computer`;
                      
         }
-
-
 
         function pickComputerMove(){
             const nrA = Math.random();
@@ -88,6 +101,11 @@
                     else if (nrA >= 2/3 && nrA <1) {compMove = 'Foarfeca';}
 
                     return compMove;
+        }
+
+        function updateScore(){
+            document.querySelector('.js-score').innerHTML = `Castigate: ${score.Castigate}, Pierdute: ${score.Pierdute}, Egal: ${score.Egal}`;
+
         }
 
     </script>
