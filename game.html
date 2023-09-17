@@ -5,33 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Game</title>
     <style>
-        body{background-color:darkgreen;}
-        h3{ color: aqua; margin: 15px; margin-top: 25px; margin-bottom: 25px; margin-left: 35px; word-spacing: 100px; }
-        #rock{
-            background: url(rock.webp);
-            width: 150px; height:  150px;
-            border: 0px;
-        }
-        #paper{
-            background: url(paper.webp) no-repeat;
-            width: 150px; height: 150px;
-            border: 0px;
-        }
-        #scissors{
-            background: url(scissors.webp) no-repeat;
-            width: 150px; height: 150px;
-            border: 0px;
-        }
+        body{ background-color: black; }
+        h3{ font-size: 25px; color: white; margin: 15px; margin-top: 25px; margin-bottom: 25px; margin-left: 55px; word-spacing: 60px; }
+        .btn-move{ height: 100px; width: 100px; background-color: transparent; margin-left: 35px; border-radius: 60px; border: 3px solid white; cursor: pointer;}
+        .btn-ico{ height: 50px; }
+        .js-result{ color: white; font-size: 20px; font-weight: bold;}
+        .js-moves{ color:white; font-weight: bold;}
+        .js-score{ color: white; font-size: 20px; font-weight: bold;}
+        .reset-btn{ font-size: 15px; margin: 0px 25px; border:red solid 1px; border-radius: 50px; padding: 5px 25px 5px 25px; cursor: pointer;}
     </style>
 </head>
 <body>
     <h3>Piatra Hartie Foarfeca</h3>
 
-    <button onclick =" playGame('Piatra');" id="rock"></button>
+    <button onclick =" playGame('Piatra');" class="btn-move"><img src="rock.png" class="btn-ico"></button>
 
-    <button onclick =" playGame('Hartie');" id="paper"></button>
+    <button onclick =" playGame('Hartie');" class="btn-move"><img src="paper.png" class="btn-ico"></button>
 
-    <button onclick =" playGame('Foarfeca');" id="scissors"></button>
+    <button onclick =" playGame('Foarfeca');" class="btn-move"><img src="scissors.png" class="btn-ico"></button>
 
     <p class="js-result"></p>
 
@@ -39,7 +30,7 @@
 
     <p class="js-score"></p>
 
-    <button onclick="score.Castigate = 0; score.Pierdute = 0; score.Egal= 0; updateScore();">Reset score</button>
+    <button onclick="score.Castigate = 0; score.Pierdute = 0; score.Egal= 0; updateScore();" class="reset-btn">Reset score</button>
 
 
     <script>
