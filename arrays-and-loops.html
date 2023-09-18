@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ro-RO">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width initial-scale=1"/>
+        <title>arrays-loops</title>
+    </head>
+    <body>
+
+        <script>
+            
+            const myArray = [10, 11, 12];       console.log(myArray);
+
+                                                console.log(myArray[0]);
+
+            myArray[0] = 99;                    console.log(myArray);
+
+            const myArray1 = [1, 'hello', true, {name: 'hat'}, [1, 2, 3]];
+            console.log(myArray1);
+
+            myArray.push(101);      console.log(myArray);
+
+            myArray.splice(1, 1);   console.log(myArray);  //first nr., remove the index; the second nr., remove the number of values
+            
+            //_____________________________Loops
+
+            let i = 1;
+
+            while(i <= 5){
+                i = i + 1; // /i++
+                console.log(i);
+            }
+
+            for(let i = 1; i <=2; i++){
+                console.log(i);
+            }
+
+
+        </script>
+        
+    </body>
+</html>
