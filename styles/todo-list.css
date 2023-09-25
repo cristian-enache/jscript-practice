@@ -1,0 +1,21 @@
+body{
+    font-family: Arial;
+    background-color: grey;
+}
+.todo-grid, .todo-grid-input{
+    display: grid;
+    grid-template-columns: 160px 120px 50px;
+    column-gap: 10px;
+    row-gap: 10px;
+}
+.todo-grid-input{
+    margin-bottom: 10px;
+}
+.btn-add{
+    color: green;
+    border-color: green;
+}
+.btn-delete{
+    color: red;
+    border-color: red;
+}
