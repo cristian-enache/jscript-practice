@@ -9,15 +9,17 @@
     <body>
         <h3>Piatra Hartie Foarfeca</h3>
 
-        <button onclick =" playGame('Piatra');" class="btn-move"><img src="resources/rock.png" class="btn-ico"></button>
-        <button onclick =" playGame('Hartie');" class="btn-move"><img src="resources/paper.png" class="btn-ico"></button>
-        <button onclick =" playGame('Foarfeca');" class="btn-move"><img src="resources/scissors.png" class="btn-ico"></button>
+        <button class="btn-move js-btn-rock"><img src="resources/rock.png" class="btn-ico"></button>
+        <button class="btn-move js-btn-paper"><img src="resources/paper.png" class="btn-ico"></button>
+        <button class="btn-move js-btn-scissors"><img src="resources/scissors.png" class="btn-ico"></button>
 
         <p class="js-result"></p>
         <p class="js-moves"></p>
         <p class="js-score"></p>
 
         <button onclick="score.Castigate = 0; score.Pierdute = 0; score.Egal= 0; updateScore();" class="reset-btn">Reset score</button>
+
+        <button class="btn-auto-play" onclick="autoPlay();">Auto-paly</button>
 
 
         <script src = "scripts/game.js"></script>

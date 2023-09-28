@@ -4,6 +4,12 @@ console.log(localStorage.getItem('score'));
 
 updateScore();
 
+document.querySelector('.js-btn-rock').addEventListener('click', () => { playGame('Piatra'); });
+
+document.querySelector('.js-btn-paper').addEventListener('click', () => { playGame('Hartie'); });
+
+document.querySelector('.js-btn-scissors').addEventListener('click', () => { playGame('Foarfeca'); });
+
 function playGame(playerMove){
 
             const compMove = pickComputerMove();
@@ -60,5 +66,25 @@ function pickComputerMove(){
 
 function updateScore(){
     document.querySelector('.js-score').innerHTML = `Castigate: ${score.Castigate}, Pierdute: ${score.Pierdute}, Egal: ${score.Egal}`;
+
+}
+
+let isAutoPlaying = false;
+
+let intervalId;
+
+function autoPlay() {
+    if (!isAutoPlaying){
+        intervalId = setInterval(() => {
+        const playerMove = pickComputerMove();
+
+        playGame(playerMove);
+        }, 1500);
+        isAutoPlaying = true;
+    }
+    else{
+        clearInterval(intervalId);
+        isAutoPlaying = false;
+    }
 
 }
