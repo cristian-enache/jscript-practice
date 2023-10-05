@@ -103,3 +103,11 @@ btnElement.addEventListener('click', eListener);
 btnElement.removeEventListener('click', eListener );
 
 btnElement.addEventListener('click', () => { console.log('click2'); } );
+
+//___________________________________array method map
+
+console.log([1, 1, 3].map( (value, index) => {
+    return value * 2;
+}));
+
+console.log([1, 1, 3].map(value => value * 2));
